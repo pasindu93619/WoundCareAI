@@ -1,0 +1,20 @@
+package com.pasindu.woundcareai.di
+
+import com.pasindu.woundcareai.data.repository.PatientRepositoryImpl
+import com.pasindu.woundcareai.domain.repository.PatientRepository
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class RepositoryModule {
+
+    @Binds
+    @Singleton
+    abstract fun bindPatientRepository(
+        patientRepositoryImpl: PatientRepositoryImpl
+    ): PatientRepository
+}
