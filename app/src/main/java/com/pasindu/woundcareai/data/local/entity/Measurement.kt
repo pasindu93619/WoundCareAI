@@ -11,13 +11,13 @@ import java.util.UUID
     foreignKeys = [
         ForeignKey(
             entity = ImageAsset::class,
-            parentColumns = ["id"],          // ✅ FIX: ImageAsset uses "id"
-            childColumns = ["imageId"],
+            parentColumns = ["id"],          // ✅ ImageAsset primary key is "id"
+            childColumns = ["imageId"],      // ✅ Measurement FK column
             onDelete = ForeignKey.CASCADE
         )
     ],
     indices = [
-        Index(value = ["imageId"])          // ✅ FIX: avoids Room warning + improves performance
+        Index(value = ["imageId"])          // ✅ removes warning + improves performance
     ]
 )
 data class Measurement(

@@ -17,7 +17,7 @@ import java.util.UUID
         )
     ],
     indices = [
-        Index(value = ["patientId"])        // ✅ FIX warning
+        Index(value = ["patientId"])        // ✅ removes warning
     ]
 )
 data class Wound(

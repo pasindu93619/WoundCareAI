@@ -17,7 +17,7 @@ import java.util.UUID
         )
     ],
     indices = [
-        Index(value = ["visitId"])          // ✅ FIX warning
+        Index(value = ["visitId"])          // ✅ removes warning
     ]
 )
 data class DressingEvent(
